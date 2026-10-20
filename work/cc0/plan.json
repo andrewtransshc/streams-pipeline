@@ -1,0 +1,136 @@
+{
+ "raw": "Copycat FaceMask.mp4",
+ "raw_dur": 205.03,
+ "trim_start": 8.9,
+ "trim_end": 202.0,
+ "audio_gain_db": 3.4,
+ "force_me": [],
+ "force_game": [],
+ "drop": [],
+ "split": {},
+ "word_merge": [
+  [
+   "Bauchika Wow Wow",
+   "BaoChickaWowWow"
+  ]
+ ],
+ "effects": [
+  {
+   "kind": "title",
+   "t": 9.1,
+   "dur": 4.5,
+   "text": "COPYCAT  |  PRE-SHOW: SELF-CARE",
+   "sfx": "whoosh"
+  },
+  {
+   "kind": "title",
+   "dur": 4.0,
+   "text": "GAMER TAG: BaoChickaWowWow",
+   "t": 13.8
+  },
+  {
+   "kind": "cam",
+   "t": 41.6,
+   "dur": 2.6
+  },
+  {
+   "kind": "cam",
+   "t": 59.6,
+   "dur": 2.4
+  },
+  {
+   "kind": "pop",
+   "t": 60.2,
+   "dur": 2.2,
+   "text": "VERY MESSY",
+   "sfx": "pop"
+  },
+  {
+   "kind": "cam",
+   "t": 83.0,
+   "dur": 2.8
+  },
+  {
+   "kind": "pop",
+   "t": 84.4,
+   "dur": 2.4,
+   "text": "OLD GAL?!",
+   "sfx": "ding"
+  },
+  {
+   "kind": "cam",
+   "t": 102.3,
+   "dur": 3.0
+  },
+  {
+   "kind": "cam",
+   "t": 172.6,
+   "dur": 2.6
+  },
+  {
+   "kind": "pop",
+   "t": 173.6,
+   "dur": 2.4,
+   "text": "40 & THRIVING",
+   "sfx": "ding"
+  },
+  {
+   "kind": "cam",
+   "t": 189.8,
+   "dur": 2.8
+  }
+ ],
+ "chapters": [
+  [
+   8.9,
+   "Self-care before the game"
+  ],
+  [
+   41.0,
+   "Putting on the face mask"
+  ],
+  [
+   150.0,
+   "My face mask hack"
+  ]
+ ],
+ "title_options": [
+  "Self-Care Before a Sad Cat Game | Copycat Pre-Show",
+  "Face Mask On, Feelings Ready | Copycat Pre-Show",
+  "Doing a Face Mask Before Copycat (I'm 40, Let Me Live)"
+ ],
+ "description": "A little pre-show before Copycat! I'm Lelac, aka BaoChickaWowWow. I spent the day in bed doing absolutely nothing, so before starting a very emotional cat game I'm doing a little self-care: a face mask (face, neck AND chest, because I'm 40 and that's how we do it).\n\nI also share my little hack for the leftover serum in the packet.\n\nCopycat Part 1 and Part 2 are up next, so don't miss them!\n\nCHAPTERS\n{CHAPTERS}\n\n#BaoChickaWowWow #Copycat #SelfCare #FaceMask #LetsPlay #FemaleGamer",
+ "tags": [
+  "lelac",
+  "baochickawowwow",
+  "copycat",
+  "copycat game",
+  "face mask",
+  "sheet mask",
+  "self care",
+  "self care day",
+  "skincare",
+  "skincare routine",
+  "gamer girl",
+  "female gamer",
+  "pre stream",
+  "just chatting",
+  "gaming"
+ ],
+ "shorts": [
+  {
+   "name": "40 and Thriving",
+   "start": 150.0,
+   "end": 197.0,
+   "hook": "SELF-CARE BEFORE A SAD GAME",
+   "title": "Face mask hack before a sad cat game #selfcare #facemask #copycat #gaming",
+   "sfx": [
+    [
+     "ding",
+     173.6
+    ]
+   ]
+  }
+ ],
+ "thumbnails": "Made: \"SELF-CARE BEFORE I CRY\" (Thumbnail.png / .jpg in this folder). Lelac in the sheet mask holding the packet ({T:160}) over the blurred Copycat title screen.\n\nOther ideas:\n1. \"SELF-CARE BEFORE I CRY\": Lelac in the sheet mask (facecam after raw 3:10) blown up big on the right, the Copycat cat silhouette and logo on the left.\n2. \"I'M 40, LET ME LIVE\": her face at raw 2:53 (\"since I am 40\") with the mask packet in hand."
+}

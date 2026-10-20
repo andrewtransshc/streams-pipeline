@@ -1,0 +1,33 @@
+# Raw recordings
+Raw/*
+!Raw/.gitkeep
+
+# Pipeline work cache: keep scripts and plan.json templates only
+work/**/*
+!work/**/
+!work/**/*.py
+!work/**/*.sh
+!work/**/plan.json
+
+# ECAPA weights are symlinks into the HuggingFace cache (speechbrain/spkrec-ecapa-voxceleb)
+pretrained/ecapa/
+
+# Output and archives
+Output/
+Ouput/
+Output Archive/
+output archive/
+Raw Archive/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.venv-voice/
+
+# Symlinks from parent folder (Video Editor shared infra)
+.env
+bin/
+
+# macOS
+.DS_Store

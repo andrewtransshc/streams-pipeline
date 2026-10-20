@@ -1,0 +1,492 @@
+{
+  "raw": "South Park Stick of Truth - Part 3.mp4",
+  "raw_dur": 4250.23,
+  "trim_start": 15.3,
+  "trim_end": 4223.4,
+  "cam": [
+    1550,
+    0,
+    370,
+    268
+  ],
+  "audio_gain_db": 3.4,
+  "force_me": [
+    42,
+    213,
+    344,
+    354,
+    360,
+    440,
+    441,
+    442,
+    476,
+    580,
+    597,
+    676,
+    703,
+    319,
+    325,
+    515
+  ],
+  "force_game": [
+    27,
+    69,
+    88,
+    122,
+    147,
+    150,
+    163,
+    167,
+    199,
+    203,
+    218,
+    219,
+    221,
+    241,
+    252,
+    253,
+    260,
+    263,
+    264,
+    265,
+    302,
+    386,
+    419,
+    420,
+    431,
+    455,
+    464,
+    465,
+    468,
+    469,
+    506,
+    509,
+    524,
+    540,
+    541,
+    542,
+    543,
+    544,
+    549,
+    550,
+    551,
+    552,
+    557,
+    559,
+    560,
+    564,
+    567,
+    568,
+    569,
+    571,
+    575,
+    576,
+    577,
+    589,
+    603,
+    605,
+    606,
+    607,
+    612,
+    613,
+    614,
+    618,
+    623,
+    624,
+    636,
+    637,
+    642,
+    643,
+    644,
+    649,
+    653,
+    654,
+    655,
+    659,
+    662,
+    663,
+    664,
+    668,
+    670,
+    673,
+    674,
+    677,
+    682,
+    683,
+    684,
+    686,
+    688,
+    689,
+    694,
+    695,
+    697,
+    702,
+    708,
+    709,
+    710,
+    733,
+    737,
+    738,
+    740,
+    754,
+    758,
+    760
+  ],
+  "drop": [
+    70,
+    321,
+    322,
+    323,
+    324,
+    449,
+    517,
+    518,
+    519,
+    530,
+    604,
+    631,
+    632,
+    633,
+    635,
+    658,
+    660,
+    661,
+    69
+  ],
+  "split": {},
+  "word_merge": [
+    [
+      "Bauchika Wow Wow",
+      "BaoChickaWowWow"
+    ],
+    [
+      "Bob Chick and Wow Wow",
+      "BaoChickaWowWow"
+    ]
+  ],
+  "effects": [
+    {
+      "kind": "title",
+      "t": 15.6,
+      "dur": 4.5,
+      "text": "SOUTH PARK: THE STICK OF TRUTH  |  EPISODE 3",
+      "sfx": "whoosh"
+    },
+    {
+      "kind": "title",
+      "t": 20.4,
+      "dur": 4.0,
+      "text": "GAMER TAG: BaoChickaWowWow"
+    },
+    {
+      "kind": "cam",
+      "t": 823.6,
+      "dur": 2.6
+    },
+    {
+      "kind": "pop",
+      "t": 824.3,
+      "dur": 2.6,
+      "text": "GAS MASK FTW",
+      "sfx": "ding"
+    },
+    {
+      "kind": "cam",
+      "t": 995.6,
+      "dur": 2.2
+    },
+    {
+      "kind": "zoom",
+      "t": 1061.0,
+      "dur": 2.4,
+      "sfx": "boom"
+    },
+    {
+      "kind": "pop",
+      "t": 1061.1,
+      "dur": 2.4,
+      "text": "DRAGON SHOUT!"
+    },
+    {
+      "kind": "pop",
+      "t": 1171.3,
+      "dur": 2.6,
+      "text": "FART MASTER",
+      "sfx": "ding"
+    },
+    {
+      "kind": "cam",
+      "t": 1174.1,
+      "dur": 2.2
+    },
+    {
+      "kind": "zoom",
+      "t": 1783.2,
+      "dur": 2.6,
+      "sfx": "boom"
+    },
+    {
+      "kind": "cam",
+      "t": 1918.0,
+      "dur": 3.0
+    },
+    {
+      "kind": "cam",
+      "t": 1934.1,
+      "dur": 2.2
+    },
+    {
+      "kind": "pop",
+      "t": 1934.2,
+      "dur": 2.2,
+      "text": "OFFICER DOWN",
+      "sfx": "pop"
+    },
+    {
+      "kind": "zoom",
+      "t": 2696.8,
+      "dur": 2.6,
+      "sfx": "boom"
+    },
+    {
+      "kind": "pop",
+      "t": 2930.7,
+      "dur": 2.6,
+      "text": "DRAGONBORN",
+      "sfx": "ding"
+    },
+    {
+      "kind": "cam",
+      "t": 2949.0,
+      "dur": 2.4
+    },
+    {
+      "kind": "pop",
+      "t": 2952.7,
+      "dur": 2.2,
+      "text": "LOOT TIME",
+      "sfx": "pop"
+    },
+    {
+      "kind": "cam",
+      "t": 3263.5,
+      "dur": 2.2
+    },
+    {
+      "kind": "pop",
+      "t": 3263.6,
+      "dur": 2.4,
+      "text": "WE GOT IT!",
+      "sfx": "ding"
+    },
+    {
+      "kind": "cam",
+      "t": 3971.6,
+      "dur": 2.4
+    },
+    {
+      "kind": "pop",
+      "t": 3971.7,
+      "dur": 2.6,
+      "text": "CRAIG IS FREE",
+      "sfx": "ding"
+    },
+    {
+      "kind": "zoom",
+      "t": 4144.0,
+      "dur": 2.8,
+      "sfx": "boom"
+    },
+    {
+      "kind": "pop",
+      "t": 4146.2,
+      "dur": 2.6,
+      "text": "SIR DOUCHEBAG"
+    },
+    {
+      "kind": "cam",
+      "t": 4147.6,
+      "dur": 2.2
+    },
+    {
+      "kind": "pop",
+      "t": 4212.1,
+      "dur": 4.5,
+      "text": "LIKE & SUBSCRIBE",
+      "sfx": "pop"
+    },
+    {
+      "kind": "title",
+      "t": 4219.2,
+      "dur": 3.6,
+      "text": "BaoChickaWowWow"
+    }
+  ],
+  "chapters": [
+    [
+      15.3,
+      "Back after a break"
+    ],
+    [
+      207.0,
+      "Shopping for a gas mask"
+    ],
+    [
+      640.0,
+      "Getting past security"
+    ],
+    [
+      975.0,
+      "Craig is in detention (again)"
+    ],
+    [
+      1027.0,
+      "Magic training: Dragon Shout"
+    ],
+    [
+      1200.0,
+      "Heading to school"
+    ],
+    [
+      1325.0,
+      "ManBearPig sensors"
+    ],
+    [
+      1766.0,
+      "Mr. Mackey vs. Craig"
+    ],
+    [
+      1880.0,
+      "Breaking into the school"
+    ],
+    [
+      2160.0,
+      "Hunting for keys"
+    ],
+    [
+      2696.0,
+      "Boss: the brass key"
+    ],
+    [
+      2928.0,
+      "Hall monitors fight back"
+    ],
+    [
+      3260.0,
+      "Got the key!"
+    ],
+    [
+      3930.0,
+      "Rescuing Craig"
+    ],
+    [
+      4133.0,
+      "Sir Douchebag"
+    ],
+    [
+      4179.0,
+      "Final thoughts"
+    ]
+  ],
+  "title_options": [
+    "Cartman Taught Me Fart Magic | South Park: The Stick of Truth - Part 3",
+    "Breaking Craig Out of Detention | South Park: The Stick of Truth Part 3",
+    "I Got Promoted to SIR Douchebag | South Park: The Stick of Truth Ep. 3",
+    "Hall Monitors Are the Final Boss | Stick of Truth #3"
+  ],
+  "description": "Part 3 of South Park: The Stick of Truth! I'm Lelac, aka BaoChickaWowWow, and after a little break I'm back to finish assembling Cartman's army.\n\nI finally buy a gas mask to get past that pepper spray, Cartman teaches me magic (it's farts, the magic is farts), and we break into South Park Elementary to bust Craig out of Mr. Mackey's detention, fighting our way through an army of hall monitors for the brass, silver and gold keys. And for my efforts... I've been promoted to Sir Douchebag.\n\nLet me know in the comments if you want me to do more side quests next time!\n\nIf you enjoyed it, like and subscribe so you don't miss Part 4.\n\nCHAPTERS\n{CHAPTERS}\n\n#BaoChickaWowWow #SouthPark #StickOfTruth #SouthParkStickOfTruth #LetsPlay #Gameplay #FirstPlaythrough #Part3",
+  "tags": [
+    "lelac",
+    "baochickawowwow",
+    "south park the stick of truth",
+    "stick of truth",
+    "stick of truth part 3",
+    "south park",
+    "south park game",
+    "stick of truth gameplay",
+    "stick of truth walkthrough",
+    "stick of truth lets play",
+    "south park stick of truth first playthrough",
+    "dragon shout",
+    "fart magic",
+    "craig detention",
+    "mr mackey",
+    "hall monitors",
+    "sir douchebag",
+    "cartman",
+    "butters",
+    "south park rpg",
+    "lets play",
+    "funny gameplay",
+    "female gamer",
+    "gaming"
+  ],
+  "shorts": [
+    {
+      "name": "Fart Magic Training",
+      "start": 1027.0,
+      "end": 1073.0,
+      "hook": "CARTMAN TEACHES ME MAGIC",
+      "title": "Cartman taught me magic... it's farts #southpark #stickoftruth #gaming",
+      "sfx": [
+        [
+          "boom",
+          1061.0
+        ]
+      ]
+    },
+    {
+      "name": "Fart Master",
+      "start": 1156.5,
+      "end": 1176.5,
+      "hook": "I MASTERED IT",
+      "title": "Mastered the ancient art of the fart #southpark #stickoftruth",
+      "sfx": [
+        [
+          "ding",
+          1171.3
+        ]
+      ]
+    },
+    {
+      "name": "Mackey vs Craig",
+      "start": 1765.5,
+      "end": 1796.0,
+      "hook": "CRAIG IS IN DETENTION... AGAIN",
+      "title": "Mr. Mackey vs Craig, m'kay #southpark #mrmackey #stickoftruth",
+      "sfx": [
+        [
+          "boom",
+          1783.2
+        ]
+      ]
+    },
+    {
+      "name": "Dragonborn",
+      "start": 2928.0,
+      "end": 2955.0,
+      "hook": "HE'S SOME KIND OF DRAGONBORN",
+      "title": "The hall monitors are NOT ready #southpark #stickoftruth #gaming",
+      "sfx": [
+        [
+          "ding",
+          2930.7
+        ]
+      ]
+    },
+    {
+      "name": "Sir Douchebag",
+      "start": 4128.0,
+      "end": 4152.0,
+      "hook": "I GOT PROMOTED",
+      "title": "Cartman promoted me to SIR Douchebag #southpark #cartman #stickoftruth",
+      "sfx": [
+        [
+          "boom",
+          4144.0
+        ]
+      ]
+    }
+  ],
+  "thumbnails": "Made: \"CARTMAN TAUGHT ME FART MAGIC\" (Thumbnail.png and Thumbnail v2 (logo).png in this folder), matching title #1.\nLelac's \"ew\" face is from raw 17:43; Cartman in his wizard hat is from raw 17:15. The cartoon fart cloud was added.\n\nOther ideas if you want to test a second thumbnail:\n1. \"SIR DOUCHEBAG?!\" with the knighting scene (whole army lined up) at raw 1:09:05 and her \"oh god\" face at raw 1:09:07. Matches title #3.\n2. \"DETENTION BREAKOUT\" with Mr. Mackey at the \"Detention Today\" board (raw 29:43) and Craig from behind. Matches title #2."
+}

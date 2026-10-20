@@ -1,0 +1,520 @@
+{
+  "raw": "South Park Stick of Truth Part 2.mp4",
+  "raw_dur": 5899.27,
+  "trim_start": 15.6,
+  "trim_end": 5873.4,
+  "cam": [
+    1550,
+    0,
+    370,
+    268
+  ],
+  "audio_gain_db": 2.0,
+  "force_me": [
+    176,
+    179,
+    180,
+    183,
+    285,
+    340,
+    346,
+    365,
+    366,
+    630,
+    922
+  ],
+  "force_game": [
+    36,
+    157,
+    199,
+    240,
+    257,
+    264,
+    265,
+    266,
+    267,
+    286,
+    288,
+    290,
+    293,
+    294,
+    295,
+    319,
+    322,
+    325,
+    326,
+    328,
+    332,
+    337,
+    339,
+    341,
+    352,
+    353,
+    357,
+    359,
+    360,
+    371,
+    374,
+    376,
+    379,
+    381,
+    384,
+    389,
+    407,
+    425,
+    432,
+    447,
+    452,
+    454,
+    455,
+    460,
+    474,
+    478,
+    507,
+    509,
+    511,
+    514,
+    537,
+    538,
+    542,
+    634,
+    636,
+    637,
+    638,
+    639,
+    640,
+    641,
+    642,
+    675,
+    681,
+    698,
+    699,
+    700,
+    701,
+    720,
+    760,
+    769,
+    778,
+    781,
+    785,
+    787,
+    800,
+    807,
+    811,
+    813,
+    830,
+    845,
+    849,
+    850,
+    899,
+    900,
+    906,
+    974,
+    990
+  ],
+  "drop": [
+    113,
+    188,
+    216,
+    278,
+    330,
+    335,
+    434,
+    436,
+    438,
+    471,
+    472,
+    810,
+    861,
+    867,
+    951,
+    952,
+    972
+  ],
+  "split": {},
+  "word_merge": [
+    [
+      "Bauchika Wow Wow",
+      "BaoChickaWowWow"
+    ],
+    [
+      "bow chicka Wow Oh",
+      "BaoChickaWowWow"
+    ]
+  ],
+  "effects": [
+    {
+      "kind": "title",
+      "t": 16.0,
+      "dur": 4.5,
+      "text": "SOUTH PARK: THE STICK OF TRUTH  |  EPISODE 2",
+      "sfx": "whoosh"
+    },
+    {
+      "kind": "title",
+      "t": 20.8,
+      "dur": 4.0,
+      "text": "GAMER TAG: BaoChickaWowWow"
+    },
+    {
+      "kind": "zoom",
+      "t": 96.0,
+      "dur": 2.4,
+      "sfx": "boom"
+    },
+    {
+      "kind": "pop",
+      "t": 96.1,
+      "dur": 2.4,
+      "text": "MANBEARPIG"
+    },
+    {
+      "kind": "cam",
+      "t": 446.5,
+      "dur": 2.6
+    },
+    {
+      "kind": "pop",
+      "t": 446.7,
+      "dur": 2.4,
+      "text": "JUST A KID!",
+      "sfx": "pop"
+    },
+    {
+      "kind": "cam",
+      "t": 573.8,
+      "dur": 2.0
+    },
+    {
+      "kind": "pop",
+      "t": 1155.7,
+      "dur": 3.0,
+      "text": "THE POOP THAT TOOK A PEE",
+      "sfx": "ding"
+    },
+    {
+      "kind": "zoom",
+      "t": 1364.5,
+      "dur": 2.2,
+      "sfx": "boom"
+    },
+    {
+      "kind": "cam",
+      "t": 1798.2,
+      "dur": 4.0
+    },
+    {
+      "kind": "pop",
+      "t": 1801.6,
+      "dur": 2.5,
+      "text": "SO CLOSE",
+      "sfx": "boom"
+    },
+    {
+      "kind": "pop",
+      "t": 1829.5,
+      "dur": 2.2,
+      "text": "SHE'S PISSED",
+      "sfx": "pop"
+    },
+    {
+      "kind": "zoom",
+      "t": 2156.2,
+      "dur": 3.0
+    },
+    {
+      "kind": "cam",
+      "t": 2164.0,
+      "dur": 2.6
+    },
+    {
+      "kind": "pop",
+      "t": 2164.1,
+      "dur": 2.5,
+      "text": "DETENTION?!",
+      "sfx": "boom"
+    },
+    {
+      "kind": "pop",
+      "t": 2745.0,
+      "dur": 2.6,
+      "text": "NO BIG DEAL",
+      "sfx": "ding"
+    },
+    {
+      "kind": "cam",
+      "t": 3229.1,
+      "dur": 3.0
+    },
+    {
+      "kind": "pop",
+      "t": 3230.6,
+      "dur": 2.6,
+      "text": "METH HOUSE?!",
+      "sfx": "boom"
+    },
+    {
+      "kind": "pop",
+      "t": 3901.0,
+      "dur": 3.0,
+      "text": "TWEEK RECRUITED",
+      "sfx": "ding"
+    },
+    {
+      "kind": "cam",
+      "t": 3905.2,
+      "dur": 2.2
+    },
+    {
+      "kind": "cam",
+      "t": 4322.5,
+      "dur": 2.6
+    },
+    {
+      "kind": "cam",
+      "t": 4736.2,
+      "dur": 2.6
+    },
+    {
+      "kind": "pop",
+      "t": 4736.3,
+      "dur": 2.4,
+      "text": "MSG",
+      "sfx": "boom"
+    },
+    {
+      "kind": "pop",
+      "t": 4812.9,
+      "dur": 2.4,
+      "text": "DOOR PUZZLE",
+      "sfx": "ding"
+    },
+    {
+      "kind": "zoom",
+      "t": 5314.7,
+      "dur": 3.0,
+      "sfx": "boom"
+    },
+    {
+      "kind": "pop",
+      "t": 5318.0,
+      "dur": 2.6,
+      "text": "BOSS: GENGHIS KHAN"
+    },
+    {
+      "kind": "cam",
+      "t": 5543.3,
+      "dur": 2.0
+    },
+    {
+      "kind": "pop",
+      "t": 5550.8,
+      "dur": 2.8,
+      "text": "BOSS DOWN",
+      "sfx": "ding"
+    },
+    {
+      "kind": "pop",
+      "t": 5625.0,
+      "dur": 2.6,
+      "text": "BUTTERS > ME",
+      "sfx": "pop"
+    },
+    {
+      "kind": "pop",
+      "t": 5862.9,
+      "dur": 4.5,
+      "text": "LIKE & SUBSCRIBE",
+      "sfx": "pop"
+    },
+    {
+      "kind": "title",
+      "t": 5868.5,
+      "dur": 3.6,
+      "text": "BaoChickaWowWow"
+    }
+  ],
+  "chapters": [
+    [
+      15.6,
+      "Back in South Park"
+    ],
+    [
+      83.5,
+      "Al Gore & ManBearPig"
+    ],
+    [
+      435.0,
+      "The gated community"
+    ],
+    [
+      779.0,
+      "Butters' house"
+    ],
+    [
+      1026.0,
+      "Shopping at Cartman's"
+    ],
+    [
+      1340.0,
+      "Ambushed on the way to Craig's"
+    ],
+    [
+      1890.0,
+      "Round two"
+    ],
+    [
+      2147.0,
+      "Craig is in detention"
+    ],
+    [
+      2700.0,
+      "Exploring the neighborhood"
+    ],
+    [
+      3022.0,
+      "Restocking"
+    ],
+    [
+      3200.0,
+      "Kenny's house"
+    ],
+    [
+      3876.0,
+      "Tweek joins the kingdom"
+    ],
+    [
+      4248.0,
+      "City Wok"
+    ],
+    [
+      4370.0,
+      "Storming the tower"
+    ],
+    [
+      5314.0,
+      "Boss fight: Genghis Khan"
+    ],
+    [
+      5704.0,
+      "Summon unlocked"
+    ],
+    [
+      5827.0,
+      "Final thoughts"
+    ]
+  ],
+  "title_options": [
+    "We Got WIPED... Then Beat Genghis Khan | South Park: The Stick of Truth - Part 2",
+    "Al Gore Needs My Help (He's Super Cereal) | South Park: The Stick of Truth Part 2",
+    "Is This a Meth House?! | South Park: The Stick of Truth Ep. 2",
+    "Recruiting Cartman's Army Went Horribly | Stick of Truth #2"
+  ],
+  "description": "Part 2 of South Park: The Stick of Truth! I'm Lelac, aka BaoChickaWowWow, and this time the New Kid (and Butters, who is honestly carrying) is out recruiting Craig, Token and Tweek for Cartman's army.\n\nAl Gore drafts me into hunting ManBearPig, a security guard pepper sprays me, we get completely wiped by elves, Craig turns out to be in detention, Kenny's house is... a lot, and we finish by taking down Genghis Khan himself.\n\nShould I keep going? Let me know what you think in the comments!\n\nIf you enjoyed it, like and subscribe so you don't miss Part 3.\n\nCHAPTERS\n{CHAPTERS}\n\n#BaoChickaWowWow #SouthPark #StickOfTruth #SouthParkStickOfTruth #LetsPlay #Gameplay #FirstPlaythrough #Part2",
+  "tags": [
+    "lelac",
+    "baochickawowwow",
+    "south park the stick of truth",
+    "stick of truth",
+    "stick of truth part 2",
+    "south park",
+    "south park game",
+    "stick of truth gameplay",
+    "stick of truth walkthrough",
+    "stick of truth lets play",
+    "south park stick of truth first playthrough",
+    "manbearpig",
+    "al gore south park",
+    "genghis khan boss",
+    "tweek",
+    "butters",
+    "cartman",
+    "south park rpg",
+    "lets play",
+    "first playthrough",
+    "funny gameplay",
+    "female gamer",
+    "gaming"
+  ],
+  "shorts": [
+    {
+      "name": "Al Gore and ManBearPig",
+      "start": 83.5,
+      "end": 119.6,
+      "hook": "AL GORE NEEDS YOUR HELP",
+      "title": "Al Gore is SUPER CEREAL about ManBearPig #southpark #stickoftruth #gaming",
+      "sfx": [
+        [
+          "boom",
+          96.0
+        ]
+      ]
+    },
+    {
+      "name": "Pepper Spray",
+      "start": 435.5,
+      "end": 457.0,
+      "hook": "I'M JUST A KID!",
+      "title": "Security guard pepper sprayed me #southpark #stickoftruth",
+      "sfx": [
+        [
+          "pop",
+          446.7
+        ]
+      ]
+    },
+    {
+      "name": "We Got Wiped",
+      "start": 1790.0,
+      "end": 1834.0,
+      "hook": "SO. CLOSE.",
+      "title": "We got WIPED by elves #southpark #stickoftruth #gaming",
+      "sfx": [
+        [
+          "boom",
+          1801.6
+        ]
+      ]
+    },
+    {
+      "name": "Craig Is in Detention",
+      "start": 2147.5,
+      "end": 2172.5,
+      "hook": "WE CAME ALL THIS WAY...",
+      "title": "Walked all the way to Craig's house for THIS #southpark #stickoftruth",
+      "sfx": [
+        [
+          "boom",
+          2164.1
+        ]
+      ]
+    },
+    {
+      "name": "Meth House",
+      "start": 3200.0,
+      "end": 3262.0,
+      "hook": "KENNY'S HOUSE IS... A LOT",
+      "title": "Wait... is Kenny's house a METH house?! #southpark #stickoftruth",
+      "sfx": [
+        [
+          "boom",
+          3230.6
+        ]
+      ]
+    },
+    {
+      "name": "Tweeks Dad",
+      "start": 3876.0,
+      "end": 3911.0,
+      "hook": "TWEEK'S DAD IS... SOMETHING",
+      "title": "Tweek's dad really said that #southpark #tweek #stickoftruth",
+      "sfx": [
+        [
+          "ding",
+          3901.0
+        ]
+      ]
+    }
+  ],
+  "thumbnails": "Made: \"WE BEAT GENGHIS KHAN!\" (Thumbnail.png and Thumbnail v2 (logo).png in this folder), matching title #1.\nLelac's victory hand-clap is from raw 1:32:23; Genghis Khan and his rider are from raw 1:28:50.\n\nOther ideas if you want to test a second thumbnail:\n1. \"AL GORE NEEDS ME?!\" with Al Gore + \"MANBEARPIG!\" subtitle frame at raw 1:36, plus her big grin from raw 1:32:31.\n2. \"SO. CLOSE.\" with the wipe screen (both characters down) at raw 29:58 and a frustrated face. Good contrast with the win.\n3. Avoid \"METH HOUSE\" text or the lab frame (raw 53:50) in thumbnails: drug imagery can limit ads. It's fine as a title or a Short."
+}

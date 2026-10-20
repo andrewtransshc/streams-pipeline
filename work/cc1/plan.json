@@ -1,0 +1,128 @@
+{
+ "raw": "Copycat Part 1 (Intro).mp4",
+ "raw_dur": 108.03,
+ "trim_start": 22.9,
+ "trim_end": 106.0,
+ "audio_gain_db": -1.4,
+ "force_me": [],
+ "force_game": [],
+ "drop": [],
+ "split": {},
+ "word_merge": [
+  [
+   "Bauchika Wow Wow",
+   "BaoChickaWowWow"
+  ]
+ ],
+ "fixes": {
+  "Leelaq": "Lelac",
+  "this silpa would be": "this would be"
+ },
+ "effects": [
+  {
+   "kind": "title",
+   "t": 23.1,
+   "dur": 4.5,
+   "text": "COPYCAT  |  PART 1",
+   "sfx": "whoosh"
+  },
+  {
+   "kind": "title",
+   "dur": 4.0,
+   "text": "GAMER TAG: BaoChickaWowWow",
+   "t": 27.8
+  },
+  {
+   "kind": "cam",
+   "t": 31.2,
+   "dur": 3.4
+  },
+  {
+   "kind": "pop",
+   "t": 33.4,
+   "dur": 2.4,
+   "text": "BRAIN = MUSH",
+   "sfx": "pop"
+  },
+  {
+   "kind": "cam",
+   "t": 36.4,
+   "dur": 1.8
+  },
+  {
+   "kind": "cam",
+   "t": 72.9,
+   "dur": 3.0
+  },
+  {
+   "kind": "pop",
+   "t": 73.8,
+   "dur": 2.6,
+   "text": "GRAB THE TISSUES",
+   "sfx": "ding"
+  },
+  {
+   "kind": "cam",
+   "t": 94.0,
+   "dur": 2.6
+  }
+ ],
+ "chapters": [
+  [
+   22.9,
+   "Hey everybody, it's Lelac"
+  ],
+  [
+   50.0,
+   "What is Copycat?"
+  ],
+  [
+   85.0,
+   "Let's begin"
+  ]
+ ],
+ "title_options": [
+  "Playing a Sad Cat Game on My Period (Bad Idea) | Copycat Part 1",
+  "This Cat Game Is About to Make Me Cry | Copycat - Part 1",
+  "Copycat Part 1: A New Cat, a Grieving Owner and Me"
+ ],
+ "description": "Part 1 of Copycat! I'm Lelac, aka BaoChickaWowWow. Today we're starting Copycat, a game about a cat who gets adopted by a woman named Olive, who has just lost her other cat. It's apparently very emotional: grief, confusion, the works. And I'm on my period, so... a good old cry is probably coming.\n\nIf that sounds like your kind of game, keep watching. Part 2 is where the story really starts!\n\nCHAPTERS\n{CHAPTERS}\n\n#BaoChickaWowWow #Copycat #CopycatGame #LetsPlay #Gameplay #FirstPlaythrough #Part1",
+ "tags": [
+  "lelac",
+  "baochickawowwow",
+  "copycat",
+  "copycat game",
+  "copycat gameplay",
+  "copycat lets play",
+  "copycat walkthrough",
+  "copycat first playthrough",
+  "cat game",
+  "emotional game",
+  "sad game",
+  "story game",
+  "indie game",
+  "lets play",
+  "female gamer",
+  "gaming",
+  "copycat part 1",
+  "copycat intro",
+  "olive",
+  "adopted cat"
+ ],
+ "shorts": [
+  {
+   "name": "Period Brain",
+   "start": 49.8,
+   "end": 97.0,
+   "hook": "PERIOD + SAD CAT GAME",
+   "title": "Playing an emotional cat game on my period... what could go wrong #copycat #gaming #catgame",
+   "sfx": [
+    [
+     "ding",
+     73.8
+    ]
+   ]
+  }
+ ],
+ "thumbnails": "Made: \"SAD CAT GAME ON MY PERIOD\" (Thumbnail.png / .jpg in this folder), matching title #1. Lelac's grin from {T:24.5} with cartoon tears, over the blurred Copycat title screen.\n\nOther ideas:\n1. \"I'M GONNA CRY\": Lelac's grin from the intro (raw 0:25) next to the Copycat cat silhouette on the title screen.\n2. \"PERIOD + SAD GAME\": a tissue box graphic plus the Copycat logo."
+}
