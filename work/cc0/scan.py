@@ -1,9 +1,11 @@
 # 2 fps scan -> scan.json rows [yellow_sub_frac, motion, brightness, white_sub_frac]
 # Copycat subtitles: yellow speaker name + white line, bottom centre (y ~1000-1035 at 1080p).
+import os, sys; sys.path.insert(0, os.getcwd())  # run from the Streams folder
+from pipeline_env import FFMPEG
 import subprocess, numpy as np, json, sys
 W, H = 960, 540
 wid, raw = sys.argv[1], sys.argv[2]
-p = subprocess.Popen(["bin/ffmpeg", "-v", "error", "-i", raw, "-vf", f"fps=2,scale={W}:{H}", "-f", "rawvideo",
+p = subprocess.Popen([FFMPEG, "-v", "error", "-i", raw, "-vf", f"fps=2,scale={W}:{H}", "-f", "rawvideo",
                       "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
 prev = None; out = []
 while True:

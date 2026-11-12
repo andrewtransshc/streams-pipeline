@@ -1,11 +1,13 @@
 # Per-person mouth activity from the facecam at 10 fps -> mouth.npy [N,2] (Lelac=left face, Andrew=right face).
 # YuNet (OpenCV) face + mouth-corner landmarks; ROI around the mouth normalized to 40x24;
 # activity = mean abs change vs the previous frame's ROI (landmark-aligned, so head motion mostly cancels). NaN = no face.
+import os, sys; sys.path.insert(0, os.getcwd())  # run from the Streams folder
+from pipeline_env import FFMPEG
 import subprocess, numpy as np, cv2, sys
 src, outp = sys.argv[1], sys.argv[2]
 W, H = 740, 536
 det = cv2.FaceDetectorYN.create("pretrained/face_detection_yunet_2023mar.onnx", "", (W, H), 0.6)
-p = subprocess.Popen(["bin/ffmpeg", "-v", "error", "-i", src, "-vf",
+p = subprocess.Popen([FFMPEG, "-v", "error", "-i", src, "-vf",
      f"fps=10,crop=370:268:1550:0,scale={W}:{H}", "-f", "rawvideo", "-pix_fmt", "bgr24", "-"], stdout=subprocess.PIPE)
 prev = [None, None]; out = []
 while True:

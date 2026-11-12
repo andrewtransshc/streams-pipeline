@@ -1,10 +1,12 @@
 # Copycat thumbnails (1280x720) for cc0 / cc1 / cc2. Cutouts come from cutouts.py (rembg).
-# Run from Streams/:  .venv/bin/python work/cc2/thumb/make_thumbs.py [cc0 cc1 cc2]
+# Run from Streams/:  .venv/bin/python (Windows: .venv/Scripts/python.exe) work/cc2/thumb/make_thumbs.py [cc0 cc1 cc2]
+import os, sys; sys.path.insert(0, os.getcwd())  # run from the Streams folder
+from pipeline_env import font_path
 import math, sys
 from PIL import Image, ImageFilter, ImageDraw, ImageFont, ImageEnhance, ImageChops
 
 W, H = 1280, 720
-IMPACT = "/System/Library/Fonts/Supplemental/Impact.ttf"
+IMPACT = font_path("Impact")
 OUT = {"cc0": "Ouput/Copycat FaceMask/Copycat FaceMask - Thumbnail",
        "cc1": "Ouput/Copycat Part 1 (Intro)/Copycat Part 1 (Intro) - Thumbnail",
        "cc2": "Ouput/Copycat Part 2/Copycat Part 2 - Thumbnail"}

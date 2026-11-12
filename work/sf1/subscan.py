@@ -1,8 +1,10 @@
 # Full-res subtitle band scan, 2 fps -> subs.npy: fraction of "text-like" white pixels
 # (white with a dark pixel within 3 px horizontally) in y960-1060, x240-1680.
+import os, sys; sys.path.insert(0, os.getcwd())  # run from the Streams folder
+from pipeline_env import FFMPEG
 import subprocess, numpy as np
 X0, Y0, W, H = 240, 960, 1440, 100
-p = subprocess.Popen(["bin/ffmpeg", "-v", "error", "-i", "Raw/Split Fiction Part 1.mp4", "-vf",
+p = subprocess.Popen([FFMPEG, "-v", "error", "-i", "Raw/Split Fiction Part 1.mp4", "-vf",
                       f"fps=2,crop={W}:{H}:{X0}:{Y0}", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
 out = []
 while True:

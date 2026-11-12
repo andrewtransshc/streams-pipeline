@@ -1,3 +1,5 @@
+import os, sys; sys.path.insert(0, os.getcwd())  # run from the Streams folder
+from pipeline_env import font_path
 import sys
 from PIL import Image, ImageFilter, ImageDraw, ImageFont, ImageEnhance, ImageChops
 
@@ -50,7 +52,7 @@ bg.alpha_composite(lee,(-30,H-lee.height+20))
 
 # --- text ---
 def txt(s,size,xy,fill,rot=0):
-    f=ImageFont.truetype("/System/Library/Fonts/Supplemental/Impact.ttf",size)
+    f=ImageFont.truetype(font_path("Impact"),size)
     l,t,r,b=f.getbbox(s); im=Image.new("RGBA",(r-l+60,b-t+60),(0,0,0,0)); dd=ImageDraw.Draw(im)
     dd.text((30-l+6,30-t+8),s,font=f,fill=(0,0,0,200),stroke_width=14,stroke_fill=(0,0,0,200))
     dd.text((30-l,30-t),s,font=f,fill=fill,stroke_width=12,stroke_fill=(0,0,0,255))
