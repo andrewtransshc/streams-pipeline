@@ -1,6 +1,8 @@
+import os, sys; sys.path.insert(0, os.getcwd())  # run from the Streams folder
+from pipeline_env import FFMPEG
 import subprocess, numpy as np, json
 W,H=384,216
-p=subprocess.Popen(["bin/ffmpeg","-v","error","-i","Raw/South Park - The Stick of Truth 1.mp4","-vf",f"fps=2,scale={W}:{H}","-f","rawvideo","-pix_fmt","rgb24","-"],stdout=subprocess.PIPE)
+p=subprocess.Popen([FFMPEG,"-v","error","-i","Raw/South Park - The Stick of Truth 1.mp4","-vf",f"fps=2,scale={W}:{H}","-f","rawvideo","-pix_fmt","rgb24","-"],stdout=subprocess.PIPE)
 prev=None; out=[]
 while True:
     b=p.stdout.read(W*H*3)

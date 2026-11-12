@@ -4,12 +4,24 @@ Lelac's gaming channel. Raw OBS recordings (game full-screen, facecam baked in t
 
 Note: the output folder is spelled `Ouput/` (user-created). Each episode gets its own folder, named after the raw file: `Ouput/<raw name>/` (main edit, transcript, captions, upload kit, thumbnails) plus `Ouput/<raw name>/Shorts/`.
 
+## Setup and platforms (macOS + Windows)
+- First-time setup: macOS `bash setup-mac.sh`, Windows `powershell -ExecutionPolicy Bypass -File setup-windows.ps1`
+  (add `--extras` / `-Extras` for speaker detection + thumbnail cutouts in `.venv-voice`). Then run `check_setup.py`.
+- Python: macOS `.venv/bin/python`, Windows (Git Bash) `.venv/Scripts/python.exe`. Same for `.venv-voice`.
+  Commands below use the macOS form, so swap the path on Windows.
+- `pipeline_env.py` handles the platform differences: the ffmpeg location (bundled `bin/` if present, else PATH, and
+  puts `bin/` on PATH for Whisper), the encoder (`h264_videotoolbox` on Mac, `h264_nvenc` with an NVIDIA GPU, else
+  `libx264`; override with env `STREAMS_ENCODER`), Windows-safe `ass=` subtitle paths, and font paths for thumbnails.
+  New scripts should import from it instead of hard-coding `bin/ffmpeg` or `/System/Library/...` paths.
+- Windows: Python must read/write UTF-8 (`PYTHONUTF8=1`, set by the setup script). Scripts also pass `encoding="utf-8"`.
+- Without a GPU encoder (`libx264`), a 1-hour main render takes roughly 1–2 hours. Tell the user before starting.
+
 ## Per-episode steps
 1. Raw file in `Raw/`. Pick a short work id (e.g. `sp1`), `mkdir work/<id>`.
-2. Extract 16k mono audio → `work/<id>/audio16k.wav`; Whisper `small.en` with word timestamps → `transcript.json` (see `work/sp1/transcribe.py`; needs `PATH="$PWD/bin:$PATH"`). ~3 min for 54 min of audio.
+2. Extract 16k mono audio → `work/<id>/audio16k.wav`; Whisper `small.en` with word timestamps → `transcript.json` (see `work/sp1/transcribe.py`; it imports `pipeline_env` so Whisper finds ffmpeg; extract audio with ffmpeg `-vn -ac 1 -ar 16000`). ~3 min for 54 min of audio.
 3. 2 fps scan → `scan.json` (`work/sp1/scan.py`): yellow in-game subtitle fraction, motion, brightness. Subtitle presence = game dialogue (not the streamer) and is never cut.
 4. Read the transcript, then write `work/<id>/plan.json` (copy `work/sp1/plan.json`): trim start/end, caption speaker overrides (`force_me` / `force_game` / `drop` / `split`), effects, chapters, titles, description, tags, shorts, thumbnails.
-5. `PATH="$PWD/bin:$PATH" .venv/bin/python -u stream_edit.py <id> all` (or `docs`, `shorts [n…]`, `main`).
+5. `.venv/bin/python -u stream_edit.py <id> all` (or `docs`, `shorts [n…]`, `main`).
 
 ## Settings (first episode, not yet signed off by the user)
 - Dead air: silences > 6 s (no speech, no in-game subtitles) are cut down to 1.2 s on each side. Effects are never cut.
@@ -17,12 +29,13 @@ Note: the output folder is spelled `Ouput/` (user-created). Each episode gets it
 - Effects: `cam` = facecam enlarged 2× top-right; `zoom` = 1.35× game punch-in (facecam re-overlaid); `pop` = Impact yellow text with scale-in; `title` = lower-left episode card. SFX are synthesized in `SFX/` (whoosh/boom/pop/ding).
 - Audio: +3.4 dB plus a -1.5 dBFS limiter, landing at about -14 LUFS. Micro-fades at every cut.
 - **Profanity (Shorts only, the user's choice 2026-10-10):** in Shorts, every swear word (Lelac, Andrew or game) is bleeped: the original audio is muted and a 1 kHz tone plays, 0.25–0.77 s per word. Shorts captions show starred words (f*ck, sh*t, b*tch, a**hole, d*ck). Long videos, transcripts and SRTs stay uncensored. The word list (`CUSS` / `STARS`, `censor`, `find_bleeps`) lives in stream_edit.py and split_fiction_edit.py imports it. Not bleeped: damn, hell, piss, douchebag. Set `"no_bleep": true` in plan.json to turn it off.
+- `keep` in plan.json: raw-second ranges that are never cut for dead air (the user asked for uncut fights and pickups in sp1). Use it when the user says "too many cuts" or "don't cut this scene".
 - Per-episode overrides in plan.json: `cam` [x,y,w,h] (Part 2 onward uses the smaller 1550,0,370,268 facecam and a headset mic) and `audio_gain_db` (Part 2: +2.0, source −16 LUFS). Speaker labels for Part 2+ come from `work/sp2/voiceid.py` (ECAPA, Lelac vs game centroids, `.venv-voice`) plus regexes for repeated combat lines.
 - **Speed:** South Park long videos play at 1.1x (`MAIN_SPEED` in stream_edit.py; `"main_speed"` in plan.json overrides it), with pitch-preserving atempo. The transcript, SRT, chapters and final length in the upload kit are scaled to match. Shorts stay at 1.0x. Split Fiction is unchanged (1.0x).
-- Main export: h264_videotoolbox 16 Mbps 1080p60, AAC 320k. Shorts: 1080×1920, facecam on top (782 px) and game crop below (1138 px), all dialogue captioned (game lines in yellow), hook pill for the first 3.2 s.
+- Main export: H.264 (encoder picked by `pipeline_env.py`) 16 Mbps 1080p60, AAC 320k. Shorts: 1080×1920, facecam on top (782 px) and game crop below (1138 px), all dialogue captioned (game lines in yellow), hook pill for the first 3.2 s.
 
 ## Thumbnails
-`work/<id>/thumb/make_thumb.py` (Copycat: `work/cc2/thumb/make_thumbs.py` builds all three, cutouts from `cutouts.py`) composites cutouts in 1280×720 (sunburst background, white outlines, Impact text). Cutouts come from rembg `isnet-general-use`, installed in a separate venv. **Always pass `providers=["CPUExecutionProvider"]`**: the default CoreML provider hangs forever on this Mac. With CPU each cutout takes about 2 s. `isnet-anime` and `u2net` fail on South Park characters.
+`work/<id>/thumb/make_thumb.py` (Copycat: `work/cc2/thumb/make_thumbs.py` builds all three, cutouts from `cutouts.py`) composites cutouts in 1280×720 (sunburst background, white outlines, Impact text). Cutouts come from rembg `isnet-general-use`, installed in `.venv-voice` (setup `--extras`). **Always pass `providers=["CPUExecutionProvider"]`**: the default CoreML provider hangs forever on Macs. With CPU each cutout takes about 2 s. `isnet-anime` and `u2net` fail on South Park characters.
 
 ## Per-game projects
 Each game has its own edit script, so its settings can change without touching the other games:

@@ -1,5 +1,7 @@
 # Split Fiction Part 1 thumbnail: "2 GAMES IN 1?!" — sci-fi Zoe (left) | fantasy Zoe (right), jagged split,
 # Lelac + Andrew cutout bottom-center, small game logo bottom-right.
+import os, sys; sys.path.insert(0, os.getcwd())  # run from the Streams folder
+from pipeline_env import font_path
 import math, random
 from PIL import Image, ImageFilter, ImageDraw, ImageFont, ImageEnhance, ImageChops
 D = "work/sf1/thumb/"; W, H = 1280, 720
@@ -52,7 +54,7 @@ f = stroke(pad(f, 10), 9)
 bg.alpha_composite(f, ((W - f.width) // 2 - 10, H - f.height + 34))
 
 # --- text ---
-font = ImageFont.truetype("/System/Library/Fonts/Supplemental/Impact.ttf", 150)
+font = ImageFont.truetype(font_path("Impact"), 150)
 txt = "2 GAMES IN 1?!"
 tw = ImageDraw.Draw(bg).textbbox((0, 0), txt, font=font)
 tl = Image.new("RGBA", (tw[2] + 60, tw[3] + 60), (0, 0, 0, 0)); d = ImageDraw.Draw(tl)

@@ -444,5 +444,15 @@
       "Bauchika Wow Wow",
       "BaoChickaWowWow"
     ]
+  ],
+  "keep": [
+    [
+      1304.0,
+      1635.0
+    ],
+    [
+      2280.0,
+      2350.0
+    ]
   ]
 }

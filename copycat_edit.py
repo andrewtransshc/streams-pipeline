@@ -8,10 +8,13 @@ work/<base>/scan.json (2 fps: in-game-subtitle fraction, motion, brightness).
 Per-video edit decisions (effects, shorts, caption overrides) live in
 work/<base>/plan.json so the same script can be reused for every episode.
 
-Run:  PATH="$PWD/bin:$PATH" .venv/bin/python -u copycat_edit.py "<base>" [main|shorts|docs|all]
+Run (macOS):    .venv/bin/python -u copycat_edit.py "<base>" [main|shorts|docs|all]
+Run (Windows):  .venv/Scripts/python.exe -u copycat_edit.py "<base>" [main|shorts|docs|all]   (Git Bash)
 """
 import json, re, subprocess, sys
 from pathlib import Path
+
+from pipeline_env import FFMPEG, ass_path, video_args
 
 ROOT = Path(__file__).resolve().parent
 FPS = 60
@@ -101,9 +104,9 @@ def ts(s, ms=False):
 
 def load(base):
     w = ROOT / "work" / base
-    tr = json.load(open(w / "transcript.json"))
-    scan = json.load(open(w / "scan.json"))
-    plan = json.load(open(w / "plan.json"))
+    tr = json.load(open(w / "transcript.json", encoding="utf-8"))
+    scan = json.load(open(w / "scan.json", encoding="utf-8"))
+    plan = json.load(open(w / "plan.json", encoding="utf-8"))
     for a, b in plan.get("not_subs", []):     # bright floors / white surfaces that fooled the subtitle scan
         for i in range(int(a * 2), min(len(scan), int(b * 2) + 1)):
             scan[i][3] = 0
@@ -269,7 +272,7 @@ def main_ass(segs, plan, path):
             ev.append(f"Dialogue: 2,{ts(t0,1)},{ts(t1,1)},Pop,,0,0,0,,"
                       rf"{{\pos({x},{y})\frz{e.get('rot', -6)}\fscx160\fscy160\t(0,140,\fscx100\fscy100)\fad(0,250)}}"
                       + esc(e["text"]))
-    path.write_text(ASS_HEAD.format(w=1920, h=1080, styles=styles) + "\n".join(ev) + "\n")
+    path.write_text(encoding="utf-8", data=ASS_HEAD.format(w=1920, h=1080, styles=styles) + "\n".join(ev) + "\n")
 
 
 def enable_expr(ranges):
@@ -312,7 +315,7 @@ def render_main(name, w, src, segs, keeps, plan):
     cx, cy, cw, ch = CAM
     gx, gy, gw, gh = GAME_ZOOM
     sel = select_expr(keeps)
-    (w / "select.txt").write_text(sel)
+    (w / "select.txt").write_text(encoding="utf-8", data=sel)
     vf = [
         f"[0:v]split=4[base][c][c2][g]",
         f"[c]crop={cw}:{ch}:{cx}:{cy},scale={cw*2}:{ch*2},pad={cw*2+12}:{ch*2+12}:6:6:white[cambig]",
@@ -321,7 +324,7 @@ def render_main(name, w, src, segs, keeps, plan):
         f"[base][gz]overlay=enable='{enable_expr(zoom)}'[v1]",
         f"[v1][camsmall]overlay={cx}:{cy}:enable='{enable_expr(zoom)}'[v2]",
         f"[v2][cambig]overlay=W-w:0:enable='{enable_expr(cam)}'[v3]",
-        f"[v3]ass='{ass}'[v4]",
+        f"[v3]ass='{ass_path(ass)}'[v4]",
         f"[v4]select='{sel}',setpts=N/FRAME_RATE/TB,setpts=PTS/{MAIN_SPEED},fps={FPS}[vout]",
     ]
     mute, bchain, blab = "", [], []            # long video is not bleeped (Shorts only)
@@ -333,11 +336,10 @@ def render_main(name, w, src, segs, keeps, plan):
         f"aselect='{sel}',asetpts=N/SR/TB,atempo={MAIN_SPEED}[aout]",
     ]
     graph = ";\n".join(vf + af)
-    (w / "main_graph.txt").write_text(graph)
-    cmd = ["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-stats", "-i", str(src)] + sargs + [
+    (w / "main_graph.txt").write_text(encoding="utf-8", data=graph)
+    cmd = [FFMPEG, "-y", "-hide_banner", "-loglevel", "error", "-stats", "-i", str(src)] + sargs + [
         "-filter_complex_script", str(w / "main_graph.txt"), "-map", "[vout]", "-map", "[aout]",
-        "-c:v", "h264_videotoolbox", "-b:v", "16M", "-maxrate", "24M", "-bufsize", "32M",
-        "-profile:v", "high", "-r", str(FPS), "-pix_fmt", "yuv420p",
+        *video_args("16M", "24M", "32M"), "-r", str(FPS), "-pix_fmt", "yuv420p",
         "-c:a", "aac", "-b:a", "320k", "-ar", "48000", "-movflags", "+faststart", str(out)]
     print("rendering main ->", out.name)
     subprocess.run(cmd, check=True)
@@ -359,7 +361,7 @@ def short_ass(segs, a, b, sh, path, hook_end=3.2):
             ev.append(f"Dialogue: 0,{ts(c['start']-a,1)},{ts(min(c['end'],b)-a,1)},"
                       f"{'Me' if s['who']=='me' else 'Game'},,0,0,0,,{{\\pos(540,830)}}{esc(censor(c['text']).upper() if s['who']=='me' else censor(c['text']))}")
     ev.append(f"Dialogue: 1,{ts(0,1)},{ts(hook_end,1)},Hook,,0,0,0,,{{\\pos(540,690)\\fscx120\\fscy120\\t(0,150,\\fscx100\\fscy100)}}{esc(sh['hook'])}")
-    path.write_text(ASS_HEAD.format(w=1080, h=1920, styles=styles) + "\n".join(ev) + "\n")
+    path.write_text(encoding="utf-8", data=ASS_HEAD.format(w=1080, h=1920, styles=styles) + "\n".join(ev) + "\n")
 
 
 def render_short(name, w, src, segs, keeps, sh, n):
@@ -386,7 +388,7 @@ def render_short(name, w, src, segs, keeps, sh, n):
         f"[c]crop={cw}:{ch}:{cx}:{cy},scale=1080:782[top]",
         "[g]crop=882:930:520:0,scale=1080:1138[bot]",
         "[top][bot]vstack[st]",
-        f"[st]ass='{ass}'[s1]",
+        f"[st]ass='{ass_path(ass)}'[s1]",
         f"[s1]select='{sel}',setpts=N/FRAME_RATE/TB[vout]",
     ] + schains + bchain + [
         f"[0:a]{mute}volume={AUDIO_GAIN_DB}dB[ma]",
@@ -396,14 +398,14 @@ def render_short(name, w, src, segs, keeps, sh, n):
         f"aselect='{sel}',asetpts=N/SR/TB[aout]",
     ])
     gpath = w / f"short{n}_graph.txt"
-    gpath.write_text(graph)
+    gpath.write_text(encoding="utf-8", data=graph)
     out_dir = ROOT / "Ouput" / name / "Shorts"
     out_dir.mkdir(parents=True, exist_ok=True)
     out = out_dir / f"{name} - Short {n} - {sh['name']}.mp4"
-    cmd = ["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-ss", f"{a:.3f}", "-to", f"{b:.3f}",
+    cmd = [FFMPEG, "-y", "-hide_banner", "-loglevel", "error", "-ss", f"{a:.3f}", "-to", f"{b:.3f}",
            "-i", str(src)] + sargs + [
         "-filter_complex_script", str(gpath), "-map", "[vout]", "-map", "[aout]",
-        "-c:v", "h264_videotoolbox", "-b:v", "12M", "-profile:v", "high", "-r", str(FPS), "-pix_fmt", "yuv420p",
+        *video_args("12M"), "-r", str(FPS), "-pix_fmt", "yuv420p",
         "-c:a", "aac", "-b:a", "256k", "-movflags", "+faststart", str(out)]
     print(f"rendering short {n} ({sum(y-x for x,y in local):.1f}s) ->", out.name)
     subprocess.run(cmd, check=True)
@@ -418,7 +420,7 @@ def write_docs(name, segs, keeps, plan, tr):
              "LELAC = streamer, GAME = in-game dialogue / narration. Raw-stream times in [brackets].", ""]
     for s in segs:
         lines.append(f"{ts(f(s['start']))}  [{ts(s['start'])}]  {'LELAC' if s['who']=='me' else 'GAME '}: {s['text']}")
-    (out_dir / f"{name} - Transcript.txt").write_text("\n".join(lines) + "\n")
+    (out_dir / f"{name} - Transcript.txt").write_text(encoding="utf-8", data="\n".join(lines) + "\n")
 
     # SRT of everything (upload as YouTube closed captions for accessibility + SEO)
     srt, k = [], 1
@@ -428,7 +430,7 @@ def write_docs(name, segs, keeps, plan, tr):
             a, b = f(c["start"]), f(c["end"])
             if b - a < 0.2: continue
             srt.append(f"{k}\n{st(a)} --> {st(b)}\n{'' if s['who']=='me' else '[Game] '}{c['text']}\n"); k += 1
-    (out_dir / f"{name} - Captions.srt").write_text("\n".join(srt))
+    (out_dir / f"{name} - Captions.srt").write_text(encoding="utf-8", data="\n".join(srt))
 
     ch = "\n".join(f"{ts(f(t)) if f(t) > 0 else '0:00'} {name}" for t, name in plan["chapters"])
     total = sum(b - a for a, b in keeps) / MAIN_SPEED
@@ -440,7 +442,7 @@ def write_docs(name, segs, keeps, plan, tr):
                        for i, s in enumerate(plan["shorts"])], "",
             "THUMBNAIL IDEAS", re.sub(r"\{T:([\d.]+)\}", lambda m: f"edit {ts(f(float(m[1])))} [raw {ts(float(m[1]))}]",
                                       plan["thumbnails"].strip()), ""]
-    (out_dir / f"{name} - YouTube Upload Kit.txt").write_text("\n".join(meta))
+    (out_dir / f"{name} - YouTube Upload Kit.txt").write_text(encoding="utf-8", data="\n".join(meta))
     print("docs written; final length", ts(total))
 
 
@@ -462,7 +464,7 @@ def main():
     name = Path(plan["raw"]).stem
     segs = classify(tr, scan, plan)
     keeps = keep_ranges(tr, scan, plan, plan["raw_dur"])
-    json.dump(keeps, open(w / "keeps.json", "w"))
+    json.dump(keeps, open(w / "keeps.json", "w", encoding="utf-8"))
     print(f"{len(keeps)} keep ranges, {sum(b-a for a,b in keeps)/60:.1f} min kept")
     if what in ("docs", "all"): write_docs(name, segs, keeps, plan, tr)
     if what in ("shorts", "all"):

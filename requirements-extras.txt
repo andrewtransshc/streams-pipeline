@@ -1,0 +1,9 @@
+# Optional extras: speaker detection (SpeechBrain ECAPA) and thumbnail cutouts (rembg).
+# Installed into .venv-voice by the setup scripts with --extras.
+speechbrain
+torch
+torchaudio
+numpy
+scipy
+pillow
+rembg[cpu]
